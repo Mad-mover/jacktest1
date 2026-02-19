@@ -1,0 +1,17 @@
+﻿Analyzing jacktest1...                                          
+
+   info - 'useTextTheme' is deprecated and shouldn't be used. This property has been replaced by the more aptly named useMaterial3Typography property and no longer has any function in V8 and will be removed in v9.0.0 - lib\src\core\theme\app_theme.dart:14:7 - deprecated_member_use
+   info - 'useTextTheme' is deprecated and shouldn't be used. This property has been replaced by the more aptly named useMaterial3Typography property and no longer has any function in V8 and will be removed in v9.0.0 - lib\src\core\theme\app_theme.dart:32:7 - deprecated_member_use
+warning - The annotation 'JsonKey.new' can only be used on fields or getters - lib\src\features\branches\domain\branch.dart:10:6 - invalid_annotation_target
+warning - The annotation 'JsonKey.new' can only be used on fields or getters - lib\src\features\branches\domain\branch.dart:13:6 - invalid_annotation_target
+   info - 'BranchRepositoryRef' is deprecated and shouldn't be used. Will be removed in 3.0. Use Ref instead - lib\src\features\branches\presentation\controllers\branch_controller.dart:8:35 - deprecated_member_use_from_same_package
+  error - The operator '+' isn't defined for the type 'FutureOr<int>' - lib\src\features\inventory\data\inventory_repository.dart:46:47 - undefined_operator
+warning - The annotation 'JsonKey.new' can only be used on fields or getters - lib\src\features\inventory\domain\product_stock.dart:12:6 - invalid_annotation_target
+warning - The annotation 'JsonKey.new' can only be used on fields or getters - lib\src\features\inventory\domain\product_stock.dart:13:6 - invalid_annotation_target
+warning - The annotation 'JsonKey.new' can only be used on fields or getters - lib\src\features\inventory\domain\product_stock.dart:15:6 - invalid_annotation_target
+   info - 'InventoryRepositoryRef' is deprecated and shouldn't be used. Will be removed in 3.0. Use Ref instead - lib\src\features\inventory\presentation\controllers\inventory_controller.dart:8:41 - deprecated_member_use_from_same_package
+warning - The annotation 'JsonKey.new' can only be used on fields or getters - lib\src\features\products\domain\product.dart:10:6 - invalid_annotation_target
+warning - The annotation 'JsonKey.new' can only be used on fields or getters - lib\src\features\products\domain\product.dart:15:6 - invalid_annotation_target
+   info - 'ProductRepositoryRef' is deprecated and shouldn't be used. Will be removed in 3.0. Use Ref instead - lib\src\features\products\presentation\controllers\product_controller.dart:8:37 - deprecated_member_use_from_same_package
+   info - 'value' is deprecated and shouldn't be used. Use initialValue instead. This will set the initial value for the form field. This feature was deprecated after v3.33.0-1.0.pre - lib\src\features\products\presentation\widgets\product_form_dialog.dart:37:15 - deprecated_member_use
+
