@@ -313,9 +313,10 @@ class _AddPurchaseDialogState extends ConsumerState<AddPurchaseDialog> {
 
       if (mounted) {
         ref.invalidate(purchasesProvider);
-        // Invalidate inventory for all purchased products to refresh stock display
+        // Invalidate inventory and cost for all purchased products to refresh stock & cost display
         for (var item in items) {
           ref.invalidate(inventoryControllerProvider(item.productId));
+          ref.invalidate(productLastCostProvider(item.productId));
         }
         ref.invalidate(
           productControllerProvider,
