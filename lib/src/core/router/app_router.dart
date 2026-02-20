@@ -8,6 +8,8 @@ import '../../features/inventory/presentation/pages/transfer_center_page.dart';
 import '../../features/inventory/presentation/pages/transfer_history_page.dart';
 import '../../features/purchases/presentation/pages/purchases_page.dart';
 import '../../features/purchases/presentation/pages/suppliers_page.dart';
+import '../../features/sales/presentation/pages/new_sale_screen.dart';
+import '../../features/sales/presentation/pages/sales_list_page.dart';
 
 final GlobalKey<NavigatorState> _rootNavigatorKey = GlobalKey<NavigatorState>(
   debugLabel: 'root',
@@ -29,9 +31,8 @@ class AppRouter {
         routes: [
           GoRoute(
             path: '/',
-            pageBuilder: (context, state) => const NoTransitionPage(
-              child: Center(child: Text('Welcome to Dashboard')),
-            ),
+            pageBuilder: (context, state) =>
+                const NoTransitionPage(child: DashboardHomePage()),
           ),
           GoRoute(
             path: '/products',
@@ -68,7 +69,18 @@ class AppRouter {
             pageBuilder: (context, state) =>
                 const NoTransitionPage(child: SuppliersPage()),
           ),
+          GoRoute(
+            path: '/sales',
+            pageBuilder: (context, state) =>
+                const NoTransitionPage(child: SalesListPage()),
+          ),
         ],
+      ),
+      // Full-screen sale wizard — outside shell so it has no nav rail
+      GoRoute(
+        path: '/new-sale',
+        parentNavigatorKey: _rootNavigatorKey,
+        builder: (context, state) => const NewSaleScreen(),
       ),
     ],
     errorBuilder: (context, state) => Scaffold(

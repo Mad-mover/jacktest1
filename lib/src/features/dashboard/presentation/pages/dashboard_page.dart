@@ -20,6 +20,11 @@ class DashboardPage extends StatelessWidget {
                 label: Text('Dashboard'),
               ),
               NavigationRailDestination(
+                icon: Icon(Icons.point_of_sale_outlined),
+                selectedIcon: Icon(Icons.point_of_sale),
+                label: Text('Sales'),
+              ),
+              NavigationRailDestination(
                 icon: Icon(Icons.inventory_2_outlined),
                 selectedIcon: Icon(Icons.inventory_2),
                 label: Text('Products'),
@@ -53,12 +58,13 @@ class DashboardPage extends StatelessWidget {
             selectedIndex: _getSelectedIndex(context),
             onDestinationSelected: (index) {
               if (index == 0) context.go('/');
-              if (index == 1) context.go('/products');
-              if (index == 2) context.go('/branches');
-              if (index == 3) context.go('/purchases');
-              if (index == 4) context.go('/transfer-center');
-              if (index == 5) context.go('/transfer-history');
-              if (index == 6) context.go('/suppliers');
+              if (index == 1) context.go('/sales');
+              if (index == 2) context.go('/products');
+              if (index == 3) context.go('/branches');
+              if (index == 4) context.go('/purchases');
+              if (index == 5) context.go('/transfer-center');
+              if (index == 6) context.go('/transfer-history');
+              if (index == 7) context.go('/suppliers');
             },
           ),
           const VerticalDivider(thickness: 1, width: 1),
@@ -70,12 +76,53 @@ class DashboardPage extends StatelessWidget {
 
   int _getSelectedIndex(BuildContext context) {
     final String location = GoRouterState.of(context).uri.path;
-    if (location.startsWith('/products')) return 1;
-    if (location.startsWith('/branches')) return 2;
-    if (location.startsWith('/purchases')) return 3;
-    if (location.startsWith('/transfer-center')) return 4;
-    if (location.startsWith('/transfer-history')) return 5;
-    if (location.startsWith('/suppliers')) return 6;
+    if (location.startsWith('/sales')) return 1;
+    if (location.startsWith('/products')) return 2;
+    if (location.startsWith('/branches')) return 3;
+    if (location.startsWith('/purchases')) return 4;
+    if (location.startsWith('/transfer-center')) return 5;
+    if (location.startsWith('/transfer-history')) return 6;
+    if (location.startsWith('/suppliers')) return 7;
     return 0;
+  }
+}
+
+// ─────────────────────────────────────────────────────────────
+// Dashboard Home Page — shown at '/'
+// ─────────────────────────────────────────────────────────────
+
+class DashboardHomePage extends StatelessWidget {
+  const DashboardHomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final colorScheme = theme.colorScheme;
+
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(Icons.local_gas_station, size: 80, color: colorScheme.primary),
+            const SizedBox(height: 16),
+            Text(
+              'GatewayGas',
+              style: theme.textTheme.headlineMedium?.copyWith(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const SizedBox(height: 8),
+            Text(
+              'Welcome! Use the navigation rail to get started.',
+              style: theme.textTheme.bodyMedium?.copyWith(
+                color: colorScheme.onSurfaceVariant,
+              ),
+              textAlign: TextAlign.center,
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
